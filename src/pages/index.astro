@@ -90,15 +90,24 @@ import Hero from "../components/Hero.astro";
     border: none;
     padding: 0;
   }
-
   /*
-  Define custom properties for colors
-*/
+  11. Remove default link styles
+  */
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Define custom properties for colors */
   :root {
     --color-primary-bg: #ffffff;
     --color-secondary-bg: #f9f9f9;
     --color-primary: #000000;
     --color-secondary: #868686;
+
+    --font-display: "Darker Grotesque Variable", sans-serif;
+    --font-body: "Roboto", sans-serif;
   }
 
   .main {

@@ -1,5 +1,5 @@
 ---
-
+import { socials } from "../utils";
 ---
 
 <section class="hero">
@@ -11,18 +11,73 @@
     Welcome to the digital collection of my works. Feel free to explore!
   </p>
   <div class="actions">
-    <ul class="social-links"></ul>
-    <button class="cta">Resume</button>
+    <ul class="social-links">
+      {
+        socials.map((s) => (
+          <li>
+            <a
+              href={s.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={s.label}
+            >
+              <img class="social-icon" src={s.icon} alt={s.label} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <a class="cta" href="resume.pdf" title="Resume">Resume</a>
   </div>
 </section>
 
 <style>
   .hero {
-    height: 90vh;
-    background: #f0f0f0;
     display: flex;
+    height: 90vh;
+    width: 30rem;
+    margin-left: 214px;
+    margin-right: 24px;
     flex-direction: column;
     justify-content: center;
-    padding-left: 214px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  .description {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-secondary);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .social-icon {
+    margin-right: 16px;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+  }
+
+  .cta {
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    border: 1px solid var(--color-primary);
   }
 </style>

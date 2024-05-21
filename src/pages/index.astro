@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <Hero />
+    <About />
+    <Projects />
   </main>
 </Layout>
 
@@ -30,9 +33,12 @@ import Hero from "../components/Hero.astro";
   3. Add accessible line-height
   4. Improve text rendering
 */
+  html,
   body {
+    width: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow: auto;
   }
   /*
   5. Improve media defaults
@@ -101,8 +107,8 @@ import Hero from "../components/Hero.astro";
 
   /* Define custom properties for colors */
   :root {
-    --color-primary-bg: #ffffff;
-    --color-secondary-bg: #f9f9f9;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f9f9f9;
     --color-primary: #000000;
     --color-secondary: #868686;
 
@@ -111,6 +117,6 @@ import Hero from "../components/Hero.astro";
   }
 
   .main {
-    background: var(--color-secondary-bg);
+    width: 100%;
   }
 </style>

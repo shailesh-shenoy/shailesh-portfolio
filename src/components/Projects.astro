@@ -1,12 +1,43 @@
 ---
-
+import { projects } from "../utils";
+import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section class="projects">TODO</section>
+<section class="projects">
+  <div class="projects-container">
+    <h2 class="title">Projects</h2>
+    {
+      Object.values(projects).map((project) => (
+        <ProjectCard title={project.name} />
+      ))
+    }
+  </div>
 
-<style>
-  .projects {
-    height: 100vh;
-    display: flex;
-  }
-</style>
+  <style>
+    .projects {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      aligh-items: center;
+      padding: 24px;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 720px;
+      background: var(--color-bg-secondary);
+    }
+
+    .title {
+      width: 100%;
+      margin-bottom: 24px;
+      font-size: 32px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+  </style>
+</section>

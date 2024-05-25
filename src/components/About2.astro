@@ -1,0 +1,26 @@
+---
+import { stories } from "../utils";
+import Story from "./Story2.astro";
+---
+
+<section class="about">
+  <div class="progress-bar"></div>
+  <div class="story-container" id="story-scroller">
+    {stories.map((story) => <Story {...story} />)}
+  </div>
+</section>
+
+<script>
+  function transform() {
+    const about = document.querySelector(".about");
+    const offsetTop = about ? (about as HTMLElement).offsetTop : 0;
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    console.log(percentage);
+  }
+
+  window.addEventListener("scroll", transform);
+
+  window.addEventListener("unload", () => {
+    window.removeEventListener("scroll", transform);
+  });
+</script>

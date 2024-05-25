@@ -10,120 +10,138 @@ import Story from "./Story.astro";
   <div class="story-container" id="story-scroller">
     {stories.map((story) => <Story {...story} />)}
   </div>
-
-  <style>
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-
-      padding: 3rem;
-
-      background-color: var(--color-bg-secondary);
-    }
-
-    .progress-bar {
-      width: 100%;
-      max-width: 720px;
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--color-text-primary);
-    }
-
-    .progress {
-      height: 0.5rem;
-      background-color: var(--color-primary);
-      transition: width 0.5s;
-    }
-
-    .story-container {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 80%;
-      gap: 1rem;
-      padding: 48px 0;
-      width: 100%;
-      max-width: 720px;
-      overflow-x: hidden;
-    }
-  </style>
-
-  <script>
-    const storyScroll = document.getElementById("story-scroller")!;
-    let allowHorizontalScroll = false;
-
-    // Add event listener for horizontal scroll
-    window.addEventListener("wheel", (e) => {
-      console.log("Horizontal Scroll allowed:", allowHorizontalScroll);
-      // Disable vertical scroll if allowHorizontalScroll is true
-      if (allowHorizontalScroll) {
-        // Calculate the progress bar width based on horizontal scroll
-        const scrollPercentage =
-          (storyScroll.scrollLeft /
-            (storyScroll.scrollWidth - storyScroll.clientWidth)) *
-          100;
-        const progress = document.querySelector(".progress")!;
-        progress.setAttribute("style", `width: ${scrollPercentage}%`);
-
-        // Smoothly scroll horizontally
-        storyScroll.scrollTo({
-          left: storyScroll.scrollLeft + e.deltaY * 5,
-          behavior: "smooth",
-        });
-
-        // If its end of the scroll and scroll direction is down, enable vertical scroll
-        if (
-          storyScroll.scrollLeft ===
-            storyScroll.scrollWidth - storyScroll.clientWidth &&
-          e.deltaY > 0
-        ) {
-          allowHorizontalScroll = false;
-          enableScrolling();
-        }
-
-        // If its start of the scroll and scroll direction is up, enable vertical scroll
-        if (storyScroll.scrollLeft === 0 && e.deltaY < 0) {
-          allowHorizontalScroll = false;
-          enableScrolling();
-        }
-      }
-    });
-
-    // Function to be called when intersection occurs
-    const handleIntersect = (entries: any) => {
-      entries.forEach(
-        (entry: any) => {
-          allowHorizontalScroll = !(entry.intersectionRatio === 1);
-          console.log("H Scroll allowed:", allowHorizontalScroll);
-          console.log(entry);
-          if (allowHorizontalScroll) disableScrolling();
-        },
-        { threshold: 0.2 }
-      );
-    };
-
-    // Create a new IntersectionObserver instance
-    const observer = new IntersectionObserver(handleIntersect);
-
-    // about class is the target element
-    let target = document.querySelector(".hero")!;
-    let target2 = document.querySelector(".projects")!;
-    // Start observing the target element
-    observer.observe(target);
-    observer.observe(target2);
-    function disableScrolling() {
-      var x = window.scrollX;
-      var y = window.scrollY;
-      window.onscroll = function () {
-        window.scrollTo(x, y);
-      };
-    }
-
-    function enableScrolling() {
-      window.onscroll = function () {};
-    }
-  </script>
 </section>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    padding: 3rem;
+
+    background-color: var(--color-bg-secondary);
+  }
+
+  .progress-bar {
+    width: 100%;
+    max-width: 720px;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .progress {
+    height: 0.5rem;
+    background-color: var(--color-primary);
+    transition: width 0.5s;
+  }
+
+  .story-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 80%;
+    gap: 1rem;
+    padding: 48px 0;
+    width: 100%;
+    max-width: 720px;
+    overflow-x: hidden;
+  }
+</style>
+
+<script>
+  const storyScroll = document.getElementById("story-scroller")!;
+  const about = document.querySelector(".about");
+
+  window.onscroll = function () {
+    // @ts-ignore
+    const scrollDirection = this.oldScroll > this.scrollY ? -1 : 1;
+    // @ts-ignore
+    this.oldScroll = this.scrollY;
+    const offsetTop = about
+      ? window.scrollY - (about as HTMLElement).offsetTop
+      : null;
+    const offsetBottom = about
+      ? window.scrollY - (about as HTMLElement).offsetTop
+      : null;
+    if (offsetTop != 0) {
+      return;
+    }
+    window.scrollTo(window.scrollX, window.scrollY);
+    console.log("Scroll Direction:", scrollDirection);
+  };
+  let allowHorizontalScroll = false;
+
+  // Add event listener for horizontal scroll
+  window.addEventListener("wheel", (e) => {
+    // Disable vertical scroll if allowHorizontalScroll is true
+    if (allowHorizontalScroll) {
+      // Calculate the progress bar width based on horizontal scroll
+      const scrollPercentage =
+        (storyScroll.scrollLeft /
+          (storyScroll.scrollWidth - storyScroll.clientWidth)) *
+        100;
+      const progress = document.querySelector(".progress")!;
+      progress.setAttribute("style", `width: ${scrollPercentage}%`);
+
+      // Smoothly scroll horizontally
+      storyScroll.scrollTo({
+        left: storyScroll.scrollLeft + e.deltaY * 5,
+        behavior: "smooth",
+      });
+
+      // If its end of the scroll and scroll direction is down, enable vertical scroll
+      if (
+        storyScroll.scrollLeft ===
+          storyScroll.scrollWidth - storyScroll.clientWidth &&
+        e.deltaY > 0
+      ) {
+        allowHorizontalScroll = false;
+        enableScrolling();
+      }
+
+      // If its start of the scroll and scroll direction is up, enable vertical scroll
+      if (storyScroll.scrollLeft === 0 && e.deltaY < 0) {
+        allowHorizontalScroll = false;
+        enableScrolling();
+      }
+    }
+  });
+
+  // Function to be called when intersection occurs
+  const handleIntersect = (entries: any) => {
+    entries.forEach(
+      (entry: any) => {
+        allowHorizontalScroll = !(entry.intersectionRatio === 1);
+        // console.log("H Scroll allowed:", allowHorizontalScroll);
+        // console.log(entry);
+        if (allowHorizontalScroll) disableScrolling();
+      },
+      { threshold: 0.2 }
+    );
+  };
+
+  // Create a new IntersectionObserver instance
+  const observer = new IntersectionObserver(handleIntersect);
+
+  // about class is the target element
+  let target = document.querySelector(".hero")!;
+  let target2 = document.querySelector(".projects")!;
+  // Start observing the target element
+  observer.observe(target);
+  observer.observe(target2);
+  function disableScrolling() {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    // window.onscroll = function () {
+    //   window.scrollTo(x, y);
+    // };
+  }
+
+  function enableScrolling() {
+    // window.onscroll = function () {};
+  }
+</script>

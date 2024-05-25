@@ -1,0 +1,23 @@
+---
+import { type Skill, projects } from "../utils";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const projectData = projects[title];
+---
+
+<article class="project">
+  <header>
+    <h1>{title}</h1>
+    <p>{projectData.description}</p>
+  </header>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      {projectData && projectData.skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+  </section>
+</article>

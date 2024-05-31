@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
+import About from "../components/About2.astro";
 import Projects from "../components/Projects.astro";
+import Sidebar from "../components/Sidebar.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
+  <Sidebar />
+  <main class="content">
     <Hero />
     <About />
     <Projects />
@@ -38,7 +40,11 @@ import Projects from "../components/Projects.astro";
     width: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow: auto;
+
+    background: var(--color-bg-primary);
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-weight: 300;
   }
   /*
   5. Improve media defaults
@@ -107,16 +113,22 @@ import Projects from "../components/Projects.astro";
 
   /* Define custom properties for colors */
   :root {
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #f9f9f9;
-    --color-primary: #000000;
-    --color-secondary: #868686;
+    --color-bg-primary: #070f1d;
+    --color-bg-secondary: #d9d9d9;
 
-    --font-display: "Darker Grotesque Variable", sans-serif;
-    --font-body: "Roboto", sans-serif;
+    --color-primary: #dcdcdc;
+    --color-secondary: #f5f5f5;
+    --color-green: #9eff7c;
+    --color-red: #ff7c7c;
+    --color-blue: #1570ef;
+    --color-yellow: #fcf194;
+    --color-black: #0d1117;
+
+    --font-display: "Inter Variable", sans-serif;
+    --font-body: "Inter Variable", sans-serif;
   }
 
-  .main {
-    width: 100%;
+  .content {
+    padding-left: 144px;
   }
 </style>

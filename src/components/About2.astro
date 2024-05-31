@@ -4,23 +4,16 @@ import Story from "./Story2.astro";
 ---
 
 <section class="about">
-  <div class="progress-bar"></div>
-  <div class="story-container" id="story-scroller">
-    {stories.map((story) => <Story {...story} />)}
-  </div>
+  <h2 class="title">About</h2>
 </section>
 
-<script>
-  function transform() {
-    const about = document.querySelector(".about");
-    const offsetTop = about ? (about as HTMLElement).offsetTop : 0;
-    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-    console.log(percentage);
+<style>
+  .about {
+    min-height: 100vh;
+    padding-top: 64px;
   }
-
-  window.addEventListener("scroll", transform);
-
-  window.addEventListener("unload", () => {
-    window.removeEventListener("scroll", transform);
-  });
-</script>
+  .title {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+</style>

@@ -38,4 +38,10 @@ import Skill from "./Skill.astro";
     flex-flow: row wrap;
     row-gap: 32px; */
   }
+
+  @media screen and (max-width: 1024px) {
+    .skill-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 </style>

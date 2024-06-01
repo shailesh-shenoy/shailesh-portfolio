@@ -3,6 +3,9 @@
 ---
 
 <div class="sidebar">
+  <button class="menu-button">
+    <i class="menu-icon gg-menu"></i>
+  </button>
   <nav class="nav-container">
     <ul class="nav-menu">
       <li class="nav-link"><a href="#about">about</a></li>
@@ -26,6 +29,15 @@
 </div>
 
 <style>
+  .menu-button {
+    display: none;
+    height: 32px;
+    color: var(--color-secondary);
+    width: 32px;
+    margin-top: 32px;
+    margin-left: 32px;
+  }
+
   .sidebar {
     display: flex;
     flex-flow: column;
@@ -33,7 +45,6 @@
     position: -webkit-sticky;
     top: 0;
     height: 100vh;
-    padding-left: 48px;
     background: transparent;
     color: var(--color-secondary);
     font-size: 1.1rem;
@@ -45,6 +56,7 @@
     direction: column;
     align-items: center;
     width: 5rem;
+    padding-left: 48px;
   }
 
   .nav-link {
@@ -54,6 +66,7 @@
   }
 
   .socials {
+    padding-left: 48px;
     width: fit-content;
   }
 
@@ -71,4 +84,79 @@
   .social-link:focus {
     opacity: 1;
   }
+
+  @media screen and (max-width: 1024px) {
+    .sidebar {
+      z-index: 10;
+    }
+
+    .menu-button {
+      display: block;
+    }
+
+    .nav-container {
+      position: absolute;
+      top: 20%;
+      transform: translateX(-8rem);
+    }
+
+    .socials {
+      position: absolute;
+      top: 50%;
+      transform: translateX(-8rem);
+    }
+
+    .nav-container.open {
+      transform: translateX(0);
+      transition: transform 0.15s ease-in-out;
+    }
+
+    .socials.open {
+      transform: translateX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
 </style>
+
+<script>
+  const menuButton = document.querySelector(".menu-button");
+  const menuIcon = document.querySelector(".menu-icon");
+  const navContainer = document.querySelector(".nav-container");
+  const socials = document.querySelector(".socials");
+  const mainContent = document.querySelector(".content");
+
+  const closeMenu = () => {
+    navContainer?.classList.remove("open");
+    socials?.classList.remove("open");
+    menuIcon?.classList.remove("gg-close");
+    menuIcon?.classList.add("gg-menu");
+    mainContent?.classList.remove("content-blur");
+  };
+
+  const openMenu = () => {
+    navContainer?.classList.add("open");
+    socials?.classList.add("open");
+    menuIcon?.classList.remove("gg-menu");
+    menuIcon?.classList.add("gg-close");
+    mainContent?.classList.add("content-blur");
+  };
+  const toggleMenu = () => {
+    if (navContainer?.classList.contains("open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  menuButton?.addEventListener("click", toggleMenu);
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", toggleMenu);
+  });
+
+  const socialLinks = document.querySelectorAll(".social-link");
+  socialLinks.forEach((link) => {
+    link.addEventListener("click", toggleMenu);
+  });
+</script>

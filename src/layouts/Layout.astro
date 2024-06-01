@@ -142,6 +142,64 @@ const { title } = Astro.props;
     text-decoration: none;
   }
 
+  /* CSS Icons */
+  .gg-menu {
+    transform: scale(var(--ggs, 1));
+  }
+
+  .gg-menu,
+  .gg-menu::after,
+  .gg-menu::before {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 3px;
+    background: currentColor;
+  }
+
+  .gg-menu::after,
+  .gg-menu::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+  }
+
+  .gg-menu::after {
+    top: 6px;
+  }
+
+  .gg-close {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px;
+  }
+
+  .gg-close::after,
+  .gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px;
+  }
+
+  .gg-close::after {
+    transform: rotate(-45deg);
+  }
+
   /* Define custom properties for colors */
   :root {
     --color-bg-primary: #070f1d;
@@ -158,9 +216,33 @@ const { title } = Astro.props;
 
     --font-display: "Helvetica Neue", sans-serif;
     --font-body: "Helvetica Neue", sans-serif;
+
+    --media-xs: 320px;
+    --media-sm: 480px;
+    --media-md: 768px;
+    --media-lg: 1024px;
+    --media-xl: 1200px;
   }
 
   .sidebar-layout {
     display: flex;
+  }
+
+  .content {
+    padding-left: 144px;
+    width: 100%;
+    padding-right: 64px;
+    transition: 0.1s filter ease-in-out;
+  }
+
+  .content-blur {
+    filter: blur(5px) brightness(30%);
+  }
+
+  @media screen and (max-width: 1024px) {
+    .content {
+      padding-left: 4px;
+      padding-right: 24px;
+    }
   }
 </style>

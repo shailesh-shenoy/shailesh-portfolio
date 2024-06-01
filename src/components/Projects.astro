@@ -3,7 +3,7 @@ import { projects } from "../utils";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section class="projects">
+<section class="projects" id="projects">
   <h2 class="title">Projects</h2>
   <div class="project-grid">
     {
@@ -11,17 +11,20 @@ import ProjectCard from "./ProjectCard.astro";
         <ProjectCard title={project.name} />
       ))
     }
-    <ProjectCard title="VeriFree" />
   </div>
 </section>
 
 <style>
   .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 130px 0;
   }
 
   .title {
     width: 100%;
+    max-width: 1200px;
     margin-bottom: 80px;
     font-size: 4rem;
   }

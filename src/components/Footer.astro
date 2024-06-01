@@ -3,39 +3,42 @@ import { mailToText } from "../utils";
 ---
 
 <footer class="footer">
+  <div class="spacer"></div>
   <div class="container">
-    <h2 class="title">Shailesh Shenoy</h2>
-    <div class="links">
-      <div>
-        <h3 class="list-title">site</h3>
-        <ul class="link-list">
-          <li class="link"><a href="#about">About</a></li>
-          <li class="link"><a href="#projects">Projects</a></li>
-          <li class="link"><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="list-title">socials</h3>
-        <ul class="link-list">
-          <li>
-            <a
-              class="link"
-              href="https://www.linkedin.com/in/shailesh-shenoy/"
-              target="_blank">Linkedin</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              href="https://github.com/shailesh-shenoy/"
-              target="_blank">Github</a
-            >
-          </li>
-          <li><a class="link" href={mailToText} target="_blank">Email</a></li>
-        </ul>
-      </div>
-      <div class="resume-container">
-        <a class="resume" href="/resume.pdf" target="_blank">resume</a>
+    <div class="grid">
+      <a class="title link" href="#">Shailesh Shenoy</a>
+      <div class="links">
+        <div>
+          <h3 class="list-title">site</h3>
+          <ul class="link-list">
+            <li class="link"><a href="#about">About</a></li>
+            <li class="link"><a href="#projects">Projects</a></li>
+            <li class="link"><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="list-title">socials</h3>
+          <ul class="link-list">
+            <li>
+              <a
+                class="link"
+                href="https://www.linkedin.com/in/shailesh-shenoy/"
+                target="_blank">Linkedin</a
+              >
+            </li>
+            <li>
+              <a
+                class="link"
+                href="https://github.com/shailesh-shenoy/"
+                target="_blank">Github</a
+              >
+            </li>
+            <li><a class="link" href={mailToText} target="_blank">Email</a></li>
+          </ul>
+        </div>
+        <div class="resume-container">
+          <a class="resume" href="/resume.pdf" target="_blank">resume</a>
+        </div>
       </div>
     </div>
   </div>
@@ -43,7 +46,7 @@ import { mailToText } from "../utils";
 
 <style>
   .footer {
-    padding-left: calc(48px + 5rem + 144px);
+    display: flex;
     padding-top: 148px;
     padding-right: 64px;
 
@@ -62,11 +65,24 @@ import { mailToText } from "../utils";
     );
   }
 
+  .spacer {
+    padding-left: calc(48px + 5rem + 144px);
+  }
   .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    width: 100%;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     row-gap: 24px;
     column-gap: 16px;
+    align-self: center;
     max-width: 1200px;
     padding-bottom: 200px;
   }
@@ -96,6 +112,7 @@ import { mailToText } from "../utils";
 
   .link {
     opacity: 1;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .link:hover {

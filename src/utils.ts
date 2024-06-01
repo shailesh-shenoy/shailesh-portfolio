@@ -127,14 +127,16 @@ export const allSkills: Record<string, SkillItem> = {
 };
 
 export const projects: Record<string, ProjectData> = {
-    'VeriFree': {
-        name: 'VeriFree',
-        description: `A permissioned blockchain where students with a valid educational email address can gain access to a student-led DAO as well as free transactions on the verifree Subnet.
-        Runner up prize at Chainlink Constellation hackathon in Avalanche track.`,
-        imageUrl: '/projects/verifree.png',
-        github: 'https://github.com/shailesh-shenoy/VeriFree',
+    "Secure Social Share": {
+        name: 'Secure Social Share',
+        description: `An E2E encrypted data sharing system with strict, smart contract-based access control, 
+        allowing users to securely share sensitive information with their social circle in a decentralized way.
+        Won multiple 1st place prizes at ETHBoston 2024.`,
+        imageUrl: '/projects/secure-social-share.jpg',
+        github: 'https://github.com/shailesh-shenoy/secure-share-dapp',
         skills: ['Solidity', 'NextJS', 'MongoDB', 'TypeScript']
     },
+
     'WagerWinz': {
         name: 'WagerWinz',
         description: 'A decentralized, P2P platform for creating, challenging and winning wagers on the price of ETH/USD using smart contracts and Chainlink price feed.',
@@ -148,6 +150,14 @@ export const projects: Record<string, ProjectData> = {
         imageUrl: '/projects/allcoinz.png',
         github: "",
         skills: ['Go', "React", "Postgres", "AWS"],
+    },
+    'VeriFree': {
+        name: 'VeriFree',
+        description: `A permissioned blockchain where students with a valid educational email address can gain access to a student-led DAO as well as free transactions on the verifree Subnet.
+        Runner up prize at Chainlink Constellation hackathon in Avalanche track.`,
+        imageUrl: '/projects/verifree.png',
+        github: 'https://github.com/shailesh-shenoy/VeriFree',
+        skills: ['Solidity', 'NextJS', 'MongoDB', 'TypeScript']
     },
 };
 

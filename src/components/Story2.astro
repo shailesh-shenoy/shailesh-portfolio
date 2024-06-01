@@ -19,16 +19,14 @@ const colorClass = ``;
 <style>
   .story {
     width: 33rem;
+    margin-bottom: -64px;
 
     position: relative;
     width: 50%;
-    /* background-color: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); */
   }
 
   .story:last-child {
-    border-width: 0;
+    border: 0;
   }
 
   .story::before {
@@ -42,6 +40,10 @@ const colorClass = ``;
 
     border-radius: 50%;
     z-index: 1;
+  }
+
+  .story:hover > .description {
+    opacity: 0.8;
   }
 
   .left {
@@ -69,6 +71,7 @@ const colorClass = ``;
     font-size: 1.25rem;
     color: var(--color-secondary);
     opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .yellow {

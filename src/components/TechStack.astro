@@ -34,6 +34,7 @@ import Skill from "./Skill.astro";
     width: fit-content;
     grid-template-columns: repeat(6, 1fr);
     row-gap: 24px;
+    column-gap: 24px;
     /* display: flex;
     flex-flow: row wrap;
     row-gap: 32px; */
@@ -42,6 +43,12 @@ import Skill from "./Skill.astro";
   @media screen and (max-width: 1024px) {
     .skill-container {
       grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .skill-container {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

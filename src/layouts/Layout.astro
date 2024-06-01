@@ -59,6 +59,7 @@ const { title } = Astro.props;
 */
   * {
     margin: 0;
+    padding: 0;
   }
   /*
   Typographic tweaks!
@@ -226,6 +227,7 @@ const { title } = Astro.props;
 
   .sidebar-layout {
     display: flex;
+    width: 100%;
   }
 
   .content {
@@ -240,9 +242,17 @@ const { title } = Astro.props;
   }
 
   @media screen and (max-width: 1024px) {
+    .sidebar-layout {
+      flex-direction: column;
+    }
+
     .content {
-      padding-left: 4px;
+      padding-left: 16px;
       padding-right: 24px;
+    }
+
+    body {
+      overflow: auto;
     }
   }
 </style>

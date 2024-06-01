@@ -47,6 +47,8 @@ import { mailToText } from "../utils";
 <style>
   .footer {
     display: flex;
+    width: 100%;
+    overflow: hidden;
     padding-top: 148px;
     padding-right: 64px;
 
@@ -130,9 +132,17 @@ import { mailToText } from "../utils";
     color: var(--color-blue);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .spacer {
       padding-left: 64px;
+      display: flex;
+      flex-flow: column;
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      background: transparent;
+      color: var(--color-secondary);
+      font-size: 1.1rem;
     }
 
     .links {

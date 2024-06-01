@@ -35,7 +35,7 @@
     color: var(--color-secondary);
     width: 32px;
     margin-top: 32px;
-    margin-left: 32px;
+    margin-left: 16px;
   }
 
   .sidebar {
@@ -88,6 +88,7 @@
   @media screen and (max-width: 1024px) {
     .sidebar {
       z-index: 10;
+      height: fit-content;
     }
 
     .menu-button {
@@ -96,13 +97,13 @@
 
     .nav-container {
       position: absolute;
-      top: 20%;
+      top: 20vh;
       transform: translateX(-8rem);
     }
 
     .socials {
       position: absolute;
-      top: 50%;
+      top: 50vh;
       transform: translateX(-8rem);
     }
 

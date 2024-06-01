@@ -16,7 +16,7 @@ const { name, icon } = Astro.props;
   .skill {
     display: flex;
     flex-direction: column;
-    width: 7rem;
+
     align-items: center;
     justify-content: center;
     opacity: 0.8;
@@ -34,6 +34,9 @@ const { name, icon } = Astro.props;
   }
 
   .skill-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     aspect-ratio: 1;
     height: auto;
     width: 60px;
@@ -47,5 +50,16 @@ const { name, icon } = Astro.props;
   .skill-image {
     width: 48px;
     height: auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    .skill-icon {
+      width: 54px;
+    }
+
+    .skill-image {
+    width: 32px;
+    h
+  }
   }
 </style>

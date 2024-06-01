@@ -77,6 +77,7 @@ import Sidebar from "../components/Sidebar.astro";
   h5,
   h6 {
     overflow-wrap: break-word;
+    font: inherit;
   }
   /*
   8. Create a root stacking context
@@ -123,12 +124,14 @@ import Sidebar from "../components/Sidebar.astro";
     --color-blue: #1570ef;
     --color-yellow: #fcf194;
     --color-black: #0d1117;
+    --color-white: #ffffff;
 
-    --font-display: "Inter Variable", sans-serif;
-    --font-body: "Inter Variable", sans-serif;
+    --font-display: "Helvetica Neue", sans-serif;
+    --font-body: "Helvetica Neue", sans-serif;
   }
 
   .content {
     padding-left: 144px;
+    width: 100%;
   }
 </style>

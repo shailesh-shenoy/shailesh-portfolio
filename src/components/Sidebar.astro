@@ -29,9 +29,6 @@
   .sidebar {
     display: flex;
     flex-flow: column;
-    flex-grow: 0; /* do not grow   - initial value: 0 */
-    flex-shrink: 0; /* do not shrink - initial value: 1 */
-    flex-basis: 10rem; /* width/height  - initial value: auto */
     position: sticky;
     position: -webkit-sticky;
     top: 0;
@@ -40,6 +37,7 @@
     padding-bottom: 24px;
     background: transparent;
     color: var(--color-secondary);
+    font-size: 1.1rem;
   }
 
   .nav-container {
@@ -47,6 +45,7 @@
     display: flex;
     direction: column;
     align-items: center;
+    width: 5rem;
   }
 
   .nav-link {

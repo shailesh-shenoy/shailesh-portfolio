@@ -1,19 +1,76 @@
 ---
 import { stories } from "../utils";
 import Story from "./Story2.astro";
+import TechStack from "./TechStack.astro";
 ---
 
 <section class="about">
   <h2 class="title">About</h2>
+  <div class="timeline">
+    <Story
+      title="University of Mumbai"
+      color="yellow"
+      description=`Back in 2014, I chose Computer Engineering for my undergrad as I liked playing video games and helping my friends assemble PCs from components. What began as a casual interest in technology evolved into a strong passion for programming and led me to a profession I love – solving problems with code. The Computer Engineering program at University of Mumbai provided me with a solid foundation in CS principles and prepared me to tackle real world engineering problems.`
+    />
+    <Story
+      left
+      title="Ingram Micro"
+      color="blue"
+      description=`After earning my degree in 2018, I joined Ingram Micro as a Software Engineer. Over the course of four years, I learned the intricacies of elaborate enterprise systems by working in large, agile teams - a stark contrast to the smaller, academic projects I was used to. My role was diverse, ranging from designing consumer-facing APIs, to integrating complex systems through middleware services, and scaling the infrastructure to support it all. The most rewarding part was crafting internal tools and dashboards that enhanced our team’s efficiency.`
+    />
+    <Story
+      title="Northeastern University"
+      color="red"
+      description=`In 2021, I developed a keen interest in crypto and web3 technologies. With a desire to expand my horizons, I decided to pursue a master’s degree in information systems with a concentration in Smart Contracts from Northeastern University starting in 2022. During my time at NEU, I honed my full stack development skills and gained expertise in Web3 development. The experience has been exhilarating—I’ve connected with brilliant minds at Boston’s tech events, won several hackathons, and delved deep into the crypto ecosystem and its underlying infrastructure.`
+    />
+    <Story
+      left
+      title="Fidelity Investments"
+      color="green"
+      description=`My co-op at Fidelity Labs in 2023 was a defining chapter in my career, as I played a pivotal role in the nascent development of crypto services for digital assets. The startup-like atmosphere buzzed with innovation, pushing me to explore uncharted territories of creativity and technical excellence. This experience not only polished my cloud architecture skills but also empowered me to deliver a product from inception to completion—a journey that profoundly shaped my professional growth.`
+    />
+    <Story
+      title="Present"
+      color="white"
+      description=`Today, I stand at the crossroads of experience and ambition, ready to take on new challenges. My professional path has been very rewarding, and I’m eager to continue this trajectory with like-minded innovators and leaders in the tech industry.
+    When not coding or gaming on my PC, I enjoy relaxing with my cats, cooking new recipes, and playing online chess. 
+    `
+    />
+  </div>
+  <TechStack />
 </section>
 
 <style>
   .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
-    padding-top: 64px;
+    padding: 130px 0;
   }
   .title {
+    width: 100%;
     font-size: 4rem;
     font-weight: 300;
+    margin-bottom: 64px;
   }
+
+  .timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    position: relative;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  /* .timeline::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  } */
 </style>

@@ -11,9 +11,9 @@ interface StoryItem {
     image: string;
 }
 
-export interface Skill {
+export interface SkillItem {
     name: string;
-    iconClass: string;
+    iconSrc: string;
 }
 
 export interface ProjectData {
@@ -74,55 +74,55 @@ export const stories: Array<StoryItem> = [
     },
 ];
 
-export const allSkills: Record<string, Skill> = {
+export const allSkills: Record<string, SkillItem> = {
     "Solidity": {
         name: "Solidity",
-        iconClass: "devicon-solidity-plain",
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg",
     },
     "React": {
         name: 'React',
-        iconClass: 'devicon-react-original',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     },
     // Add more skills here
     "TypeScript": {
         name: 'TypeScript',
-        iconClass: 'devicon-typescript-plain',
+        iconSrc: "/icons/typescript.png",
     },
     "Python": {
         name: 'Python',
-        iconClass: 'devicon-python-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     },
     "MongoDB": {
         name: 'MongoDB',
-        iconClass: 'devicon-mongodb-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     },
     "C#": {
         name: 'C#',
-        iconClass: 'devicon-csharp-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
     },
     "Go": {
         name: 'Go',
-        iconClass: 'devicon-go-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
     },
     "AWS": {
         name: 'AWS',
-        iconClass: 'devicon-amazonwebservices-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
     },
     "NextJS": {
         name: 'NextJS',
-        iconClass: 'devicon-nextjs-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     },
     "Postgres": {
         name: 'Postgres',
-        iconClass: 'devicon-postgresql-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     },
     "Unity": {
         name: 'Unity',
-        iconClass: 'devicon-unity-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
     },
     "Java": {
         name: 'Java',
-        iconClass: 'devicon-java-plain',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     },
 };
 

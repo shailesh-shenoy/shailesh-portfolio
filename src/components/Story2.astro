@@ -2,13 +2,112 @@
 interface Props {
   title: string;
   description: string;
-  image: string;
+  color: string;
+  left?: boolean;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, color, left = false } = Astro.props;
+
+const colorClass = ``;
 ---
 
-<div class="story">
-  <img src={image} alt={title} class="story-image" />
-  <p class="story-description">{description}</p>
+<div class=`story ${left ? "left": "right"} ${color}`>
+  <h3 class=`title `>{title}</h3>
+  <p class="description">{description}</p>
 </div>
+
+<style>
+  .story {
+    width: 33rem;
+
+    position: relative;
+    width: 50%;
+    /* background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); */
+  }
+
+  .story:last-child {
+    border-width: 0;
+  }
+
+  .story::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 0;
+    left: -8px;
+    background-color: white;
+
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .left {
+    text-align: right;
+    padding-right: 58px;
+    border-right: 1px solid var(--color-white);
+  }
+
+  .left::before {
+    left: calc(100% - 7px);
+  }
+
+  .right {
+    left: calc(50% - 1px);
+    padding-left: 58px;
+    border-left: 1px solid var(--color-white);
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    opacity: 0.6;
+  }
+
+  .yellow {
+    color: var(--color-yellow);
+  }
+
+  .yellow::before {
+    background-color: var(--color-yellow);
+  }
+
+  .blue {
+    color: var(--color-blue);
+  }
+
+  .blue::before {
+    background-color: var(--color-blue);
+  }
+
+  .red {
+    color: var(--color-red);
+  }
+
+  .red::before {
+    background-color: var(--color-red);
+  }
+
+  .green {
+    color: var(--color-green);
+  }
+
+  .green::before {
+    background-color: var(--color-green);
+  }
+
+  .white {
+    color: var(--color-white);
+  }
+
+  .white::before {
+    background-color: var(--color-white);
+  }
+</style>

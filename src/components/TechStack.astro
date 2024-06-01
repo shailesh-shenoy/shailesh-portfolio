@@ -1,0 +1,36 @@
+---
+import { allSkills, type SkillItem } from "../utils";
+import Skill from "./Skill.astro";
+console.log(allSkills);
+---
+
+<div class="skills">
+  <h3 class="title">Tech Stack</h3>
+  <div class="skill-container">
+    {
+      Object.values(allSkills).map((skill: SkillItem) => (
+        <Skill name={skill.name} icon={skill.iconSrc} />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .skills {
+    max-width: 1200px;
+    padding-top: 165px;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 56px;
+  }
+
+  .skill-container {
+    /* display: grid;
+    grid-template-columns: repeat(12, 1fr); */
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 32px;
+  }
+</style>

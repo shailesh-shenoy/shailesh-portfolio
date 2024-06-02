@@ -12,20 +12,25 @@ const colorClass = ``;
 ---
 
 <div class=`story ${left ? "left": "right"} ${color}`>
-  <h3 class=`title `>{title}</h3>
-  <p class="description">{description}</p>
+  <div class="container">
+    <h3 class=`title `>{title}</h3>
+    <p class="description">{description}</p>
+  </div>
 </div>
 
 <style>
   .story {
-    margin-bottom: -64px;
-
     position: relative;
     width: 50%;
+    margin-bottom: -64px;
+  }
+
+  .container {
+    transform: translateY(-24px);
   }
 
   .story:last-child {
-    border: 0;
+    border-color: transparent;
   }
 
   .story::before {

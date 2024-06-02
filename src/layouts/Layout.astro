@@ -30,10 +30,10 @@ const { title } = Astro.props;
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
 
-    <link
+    <!-- <link
       href="https://fonts.cdnfonts.com/css/helvetica-neue-5?styles=103510,103506,103508,103502"
       rel="stylesheet"
-    />
+    /> -->
   </head>
   <body>
     <div class="sidebar-layout">
@@ -74,7 +74,7 @@ const { title } = Astro.props;
     scroll-behavior: smooth;
     background: var(--color-bg-primary);
     color: var(--color-primary);
-    font-family: var(--font-body);
+    font-family: var(--font-thin);
     font-weight: 300;
   }
   /*
@@ -201,6 +201,16 @@ const { title } = Astro.props;
     transform: rotate(-45deg);
   }
 
+  @font-face {
+    font-family: "Monument Thin";
+    src: url("/fonts/ABCMonumentGrotesk-Thin.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Monument Regular";
+    src: url("/fonts/ABCMonumentGrotesk-Regular.woff2") format("woff2");
+  }
+
   /* Define custom properties for colors */
   :root {
     --color-bg-primary: #070f1d;
@@ -215,8 +225,8 @@ const { title } = Astro.props;
     --color-black: #0d1117;
     --color-white: #ffffff;
 
-    --font-display: "Helvetica Neue", sans-serif;
-    --font-body: "Helvetica Neue", sans-serif;
+    --font-thin: "Monument Thin", sans-serif;
+    --font-regular: "Monument Regular", sans-serif;
 
     --media-xs: 320px;
     --media-sm: 480px;
@@ -231,9 +241,10 @@ const { title } = Astro.props;
   }
 
   .content {
-    padding-left: 144px;
+    margin-left: -80px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding-right: 64px;
     transition: 0.1s filter ease-in-out;
   }
 

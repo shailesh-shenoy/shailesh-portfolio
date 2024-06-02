@@ -33,7 +33,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;500&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -208,11 +208,6 @@ const { title } = Astro.props;
     src: url("/fonts/ABCMonumentGrotesk-Thin.woff2") format("woff2");
   }
 
-  @font-face {
-    font-family: "Monument Regular";
-    src: url("/fonts/ABCMonumentGrotesk-Regular.woff2") format("woff2");
-  }
-
   /* Define custom properties for colors */
   :root {
     --color-bg-primary: #070f1d;
@@ -228,7 +223,6 @@ const { title } = Astro.props;
     --color-white: #ffffff;
 
     --font-thin: "Monument Thin", sans-serif;
-    --font-regular: "Monument Regular", sans-serif;
 
     --font-display: "Be Vietnam Pro", sans-serif;
 

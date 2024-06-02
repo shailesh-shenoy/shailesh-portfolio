@@ -31,10 +31,10 @@ import Skill from "./Skill.astro";
   .skill-container {
     display: grid;
     align-self: center;
-    width: fit-content;
+    width: 100%;
     grid-template-columns: repeat(6, 1fr);
-    row-gap: 24px;
-    column-gap: 24px;
+    row-gap: 36px;
+    /* column-gap: 80px; */
     /* display: flex;
     flex-flow: row wrap;
     row-gap: 32px; */
@@ -49,6 +49,7 @@ import Skill from "./Skill.astro";
   @media screen and (max-width: 768px) {
     .skill-container {
       grid-template-columns: repeat(3, 1fr);
+      row-gap: 36px;
     }
   }
 </style>

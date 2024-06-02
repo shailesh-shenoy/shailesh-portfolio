@@ -50,7 +50,6 @@ import { mailToText } from "../utils";
     width: 100%;
     overflow: hidden;
     padding-top: 148px;
-
     background-image: linear-gradient(
       0deg,
       hsl(216deg 98% 66%) 0%,
@@ -94,11 +93,12 @@ import { mailToText } from "../utils";
   }
 
   .links {
-    grid-column: 6 / 13;
+    grid-column: 7 / 13;
     display: flex;
     justify-content: space-between;
     font-family: var(--font-regular);
     font-weight: 500;
+    font-family: var(--font-display);
   }
 
   .list-title {
@@ -127,28 +127,23 @@ import { mailToText } from "../utils";
   .resume {
     padding: 8px 16px;
     border-radius: 100px;
+    font-weight: 500;
     background-color: var(--color-secondary);
     color: var(--color-blue);
   }
 
-  @media screen and (max-width: 1600px) {
+  @media screen and (max-width: 1400px) {
     .footer {
+      padding: 0 130px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
       padding: 0 24px;
     }
   }
   @media screen and (max-width: 1024px) {
-    .spacer {
-      padding-left: 64px;
-      display: flex;
-      flex-flow: column;
-      position: sticky;
-      position: -webkit-sticky;
-      top: 0;
-      background: transparent;
-      color: var(--color-secondary);
-      font-size: 1.1rem;
-    }
-
     .links {
       grid-column: span 12;
     }

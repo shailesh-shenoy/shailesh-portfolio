@@ -1,5 +1,5 @@
 ---
-
+import { mailToText } from "../utils";
 ---
 
 <div class="sidebar">
@@ -10,7 +10,7 @@
     <ul class="nav-menu">
       <li class="nav-link"><a href="#about">about</a></li>
       <li class="nav-link"><a href="#projects">projects</a></li>
-      <li class="nav-link"><a href="#contact">contact</a></li>
+      <li class="nav-link"><a href={mailToText} target="_blank">contact</a></li>
     </ul>
   </nav>
 
@@ -167,11 +167,11 @@
   const navLinks = document.querySelectorAll(".nav-link");
 
   navLinks.forEach((link) => {
-    link.addEventListener("click", toggleMenu);
+    link.addEventListener("click", closeMenu);
   });
 
   const socialLinks = document.querySelectorAll(".social-link");
   socialLinks.forEach((link) => {
-    link.addEventListener("click", toggleMenu);
+    link.addEventListener("click", closeMenu);
   });
 </script>

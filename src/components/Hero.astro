@@ -1,5 +1,5 @@
 ---
-import { socials } from "../utils";
+import { mailToText, socials } from "../utils";
 ---
 
 <section class="hero">
@@ -11,7 +11,7 @@ import { socials } from "../utils";
   </h1>
   <div class="actions">
     <a class="cta cta-secondary" href="/resume.pdf" target="_blank">Resume</a>
-    <a class="cta cta-primary" href="#contact">Contact</a>
+    <a class="cta cta-primary" href={mailToText}>Contact</a>
   </div>
 </section>
 

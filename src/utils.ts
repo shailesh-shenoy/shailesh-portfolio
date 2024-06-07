@@ -87,13 +87,37 @@ export const allSkills: Record<string, SkillItem> = {
         name: 'Postgres',
         iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     },
-    "Unity": {
-        name: 'Unity',
-        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+    "Spring": {
+        name: 'Spring',
+        iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
     },
     "Java": {
         name: 'Java',
         iconSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    },
+    "Chainlink": {
+        name: 'Chainlink',
+        iconSrc: "/icons/chainlink.png",
+    },
+    "Threshold": {
+        name: 'Threshold',
+        iconSrc: "/icons/threshold.svg",
+    },
+    "Avalanche": {
+        name: 'Avalanche',
+        iconSrc: "/icons/avalanche.png",
+    },
+    "PolygonID": {
+        name: 'PolygonID',
+        iconSrc: "/icons/polygonid.png",
+    },
+    "Javascript": {
+        name: 'Javascript',
+        iconSrc: "/icons/javascript.png",
+    },
+    "Mina": {
+        name: 'Mina',
+        iconSrc: "/icons/mina.png",
     },
 };
 
@@ -105,7 +129,7 @@ export const projects: Record<string, ProjectData> = {
         Won multiple 1st place prizes at ETHBoston 2024.`,
         imageUrl: '/projects/secure-social-share.jpg',
         github: 'https://github.com/shailesh-shenoy/secure-share-dapp',
-        skills: ['Solidity', 'NextJS', 'MongoDB', 'TypeScript']
+        skills: ['Solidity', 'NextJS', 'Threshold', 'TypeScript']
     },
 
     'WagerWinz': {
@@ -113,13 +137,13 @@ export const projects: Record<string, ProjectData> = {
         description: 'A decentralized, P2P platform for creating, challenging and winning wagers on the price of ETH/USD using smart contracts and Chainlink price feed.',
         imageUrl: '/projects/wagerwinz.jpg',
         github: 'https://github.com/shailesh-shenoy/wagerwinz',
-        skills: ['Solidity', 'React', 'Chainlink']
+        skills: ['Solidity', 'React', 'Chainlink', 'TypeScript']
     },
     'AllCoinz': {
         name: "AllCoinz",
         description: "A simple and easy-to-use crypto portfolio aggregator which let's you track all your coins across top exchanges and blockchains. View your portfolio on the web app or integrate into your own tools using the REST API. Work in Progress.",
         imageUrl: '/projects/allcoinz.png',
-        github: "",
+        github: "https://github.com/shailesh-shenoy/allcoinz",
         skills: ['Go', "React", "Postgres", "AWS"],
     },
     'VeriFree': {
@@ -128,8 +152,22 @@ export const projects: Record<string, ProjectData> = {
         Runner up prize at Chainlink Constellation hackathon in Avalanche track.`,
         imageUrl: '/projects/verifree.png',
         github: 'https://github.com/shailesh-shenoy/VeriFree',
-        skills: ['Solidity', 'NextJS', 'MongoDB', 'TypeScript']
+        skills: ['Solidity', 'MongoDB', 'Avalanche', 'Chainlink', 'PolygonID']
     },
+    "WordGraph": {
+        name: 'WordGraph',
+        description: `A text analysis system to create a graph based on the co-occurence of frequent word pairs in a text and apply various graph algorithms on it.`,
+        imageUrl: '/projects/wordgraph.webp',
+        github: 'https://github.com/shailesh-shenoy/word-graph',
+        skills: ['Java', 'MongoDB', 'Spring']
+    },
+    "zKredit": {
+        name: 'zKredit',
+        description: `A zero-knowledge proof demo system for secure verification of credit score using the power of zkApps on Mina protocol. Bagged a runner-up prize at ETHBoston 2023`,
+        imageUrl: '/projects/zkredit.png',
+        github: 'https://github.com/shailesh-shenoy/zkredit',
+        skills: ['Javascript', 'Mina', 'React']
+    }
 };
 
 

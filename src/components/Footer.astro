@@ -97,6 +97,7 @@ import { mailToText } from "../utils";
   .links {
     grid-column: 7 / 13;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     font-weight: 500;
     font-family: var(--font-display);
@@ -135,18 +136,41 @@ import { mailToText } from "../utils";
 
   @media screen and (max-width: 1400px) {
     .footer {
-      padding: 0 130px;
+      padding-left: 130px;
+      padding-right: 130px;
+    }
+
+    .list-title {
+      margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .links {
+      grid-column: span 12;
     }
   }
 
   @media screen and (max-width: 768px) {
-    .content {
-      padding: 0 24px;
+    .title {
+      font-size: 2rem;
+    }
+
+    .footer {
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
-  @media screen and (max-width: 1024px) {
-    .links {
-      grid-column: span 12;
+
+  @media screen and (max-width: 480px) {
+    .list-title {
+      margin-bottom: 30px;
+    }
+    
+    .resume-container {
+      display: flex;
+      justify-content: flex-end;
+      flex-basis: 100%;
+      margin-top: 16px;
     }
   }
 </style>

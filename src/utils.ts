@@ -126,12 +126,27 @@ export const projects: Record<string, ProjectData> = {
         name: 'Secure Social Share',
         description: `An E2E encrypted data sharing system with strict, smart contract-based access control, 
         allowing users to securely share sensitive information with their social circle in a decentralized way.
-        Won multiple 1st place prizes at ETHBoston 2024.`,
+        Winner of multiple 1st place prizes at ETHBoston 2024.`,
         imageUrl: '/projects/secure-social-share.jpg',
         github: 'https://github.com/shailesh-shenoy/secure-share-dapp',
         skills: ['Solidity', 'NextJS', 'Threshold', 'TypeScript']
     },
+    'VeriFree': {
+        name: 'VeriFree',
+        description: `A permissioned blockchain where students with a valid educational email address can gain access to a student-led DAO as well as free transactions on the verifree Subnet.
+        Runner up prize at Chainlink Constellation hackathon in Avalanche track.`,
+        imageUrl: '/projects/verifree.png',
+        github: 'https://github.com/shailesh-shenoy/VeriFree',
+        skills: ['Solidity', 'MongoDB', 'Avalanche', 'Chainlink', 'PolygonID']
+    },
 
+    "zKredit": {
+        name: 'zKredit',
+        description: `A zero-knowledge proof demo system for secure verification of credit score using the power of zkApps on Mina protocol. Bagged a runner-up prize at ETHBoston 2023`,
+        imageUrl: '/projects/zkredit.png',
+        github: 'https://github.com/shailesh-shenoy/zkredit',
+        skills: ['Javascript', 'Mina', 'React']
+    },
     'WagerWinz': {
         name: 'WagerWinz',
         description: 'A decentralized, P2P platform for creating, challenging and winning wagers on the price of ETH/USD using smart contracts and Chainlink price feed.',
@@ -146,14 +161,6 @@ export const projects: Record<string, ProjectData> = {
         github: "https://github.com/shailesh-shenoy/allcoinz",
         skills: ['Go', "React", "Postgres", "AWS"],
     },
-    'VeriFree': {
-        name: 'VeriFree',
-        description: `A permissioned blockchain where students with a valid educational email address can gain access to a student-led DAO as well as free transactions on the verifree Subnet.
-        Runner up prize at Chainlink Constellation hackathon in Avalanche track.`,
-        imageUrl: '/projects/verifree.png',
-        github: 'https://github.com/shailesh-shenoy/VeriFree',
-        skills: ['Solidity', 'MongoDB', 'Avalanche', 'Chainlink', 'PolygonID']
-    },
     "WordGraph": {
         name: 'WordGraph',
         description: `A text analysis system to create a graph based on the co-occurence of frequent word pairs in a text and apply various graph algorithms on it.`,
@@ -161,13 +168,6 @@ export const projects: Record<string, ProjectData> = {
         github: 'https://github.com/shailesh-shenoy/word-graph',
         skills: ['Java', 'MongoDB', 'Spring']
     },
-    "zKredit": {
-        name: 'zKredit',
-        description: `A zero-knowledge proof demo system for secure verification of credit score using the power of zkApps on Mina protocol. Bagged a runner-up prize at ETHBoston 2023`,
-        imageUrl: '/projects/zkredit.png',
-        github: 'https://github.com/shailesh-shenoy/zkredit',
-        skills: ['Javascript', 'Mina', 'React']
-    }
 };
 
 

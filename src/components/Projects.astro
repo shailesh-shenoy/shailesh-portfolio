@@ -19,7 +19,7 @@ import ProjectCard from "./ProjectCard.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 130px 0;
+    width: 100%;
   }
 
   .title {
@@ -31,9 +31,16 @@ import ProjectCard from "./ProjectCard.astro";
 
   .project-grid {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(12, 1fr);
     gap: 16px;
     column-gap: 48px;
     max-width: 1200px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .project-grid {
+      column-gap: 0;
+    }
   }
 </style>
